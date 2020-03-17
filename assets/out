@@ -4,10 +4,10 @@ set -e -u
 
 # Colors
 RED='\033[1;31m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-exec 3>&1 # make stdout available as fd 3 for the result
-exec 1>&2 # redirect all output to stderr for logging
+exec 3>&1
+exec 1>&2
 
 source=$1
 
@@ -16,7 +16,6 @@ if [ -z "$source" ]; then
   exit 1
 fi
 
-# for jq
 PATH=/usr/local/bin:$PATH
 
 cd $source
