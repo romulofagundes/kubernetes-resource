@@ -41,7 +41,7 @@ if [ -z "$CMD" ]; then
      exit 1
 fi
 
-CMD="$(eval print ${CMD})"
+CMD="$(eval echo ${CMD})"
 
 echo "kubectl ${CMD}"
 
