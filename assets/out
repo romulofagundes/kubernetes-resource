@@ -34,7 +34,7 @@ export AWS_DEFAULT_REGION
 
 aws eks update-kubeconfig --name=${AWS_CLUSTER_NAME}
 
-CMD="$(jq '(.params.kubectl)' < "${payload}")"
+CMD=$(jq -r '.params.kubectl' < "$payload")
 
 if [ -z "$CMD" ]; then
      printf "\n ${RED} Error! The Kubectl CMD is not specified! Please, add the 'params.kubectl' property to your resource parameters. ${NC}\n"
