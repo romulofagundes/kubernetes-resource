@@ -41,6 +41,8 @@ if [ -z "$CMD" ]; then
      exit 1
 fi
 
+CMD="$(eval printf ${CMD})"
+
 kubectl ${CMD}
 
 timestamp="$(jq -n "{version:{timestamp:\"$(date +%s)\"}}")"
