@@ -43,6 +43,8 @@ fi
 
 CMD="$(eval printf ${CMD})"
 
+echo "kubectl ${CMD}"
+
 kubectl ${CMD}
 
 timestamp="$(jq -n "{version:{timestamp:\"$(date +%s)\"}}")"
