@@ -20,7 +20,7 @@ PATH=/usr/local/bin:$PATH
 
 cd $source
 
-payload=$(mktemp "$TMPDIR/kubernetes-resource-request.XXXXXX")
+payload=$(mktemp "/tmp/kubernetes-resource-request.XXXXXX")
 cat > "$payload" <&0
 
 AWS_ACCESS_KEY_ID=$(jq -r '.source.aws_access_key_id // ""' < "$payload")
